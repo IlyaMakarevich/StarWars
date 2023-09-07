@@ -18,7 +18,7 @@ class FavoritesViewController: UIViewController, FavoritesView {
 
     private let noResultsLabel = UILabel().with {
         $0.text = "You have no favorites. Add It on Search screen"
-        $0.numberOfLines = 1
+        $0.numberOfLines = 0
         $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         $0.textColor = .black.withAlphaComponent(0.5)
         $0.isHidden = true
@@ -49,7 +49,7 @@ class FavoritesViewController: UIViewController, FavoritesView {
         view.addSubview(noResultsLabel)
         noResultsLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(100)
-            $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
 
