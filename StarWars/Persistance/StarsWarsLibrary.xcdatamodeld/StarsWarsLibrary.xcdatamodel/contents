@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E252" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CharacterEntity" representedClassName="CharacterEntity" syncable="YES">
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="shipsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="PlanetEntity" representedClassName="PlanetEntity" syncable="YES">
+        <attribute name="diameter" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="population" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StarshipEntity" representedClassName="StarshipEntity" syncable="YES">
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="passengers" optional="YES" attributeType="String"/>
+        <attribute name="producer" optional="YES" attributeType="String"/>
+    </entity>
+</model>
