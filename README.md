@@ -1,6 +1,5 @@
 # StarWars
 
-![Screenshot](screen1.png) ![Screenshot](screen2.png) ![Screenshot](screen3.png)
 Приложении умеет искать персонажей, космолеты, планеты в апишке https://swapi.dev/api/
 
 Сделал три экрана -главный -поиск -избранное
