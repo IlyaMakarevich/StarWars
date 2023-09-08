@@ -18,6 +18,9 @@ protocol SearchView: AnyObject {
     func showResult(_ result: SearchScreenItems, favoriteCheckerUseCase: FavoriteCheckerUseCase)
     func showErrorState(error: SearchError)
     func resetTable()
+    
+    func showActivityIndicator()
+    func hideActivityIndicator()
 }
 
 protocol SearchPresenter {
@@ -67,10 +70,14 @@ final class SearchPresenterImpl: SearchPresenter {
         }
         
         guard text.count > 1 else { return }
+        
+        view?.showActivityIndicator()
         searchUseCase.search(by: text)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] result in
                 guard let self else { return }
+                
+                self.view?.hideActivityIndicator()
                 if result.people == nil && result.starships == nil && result.planets == nil {
                     self.view?.showErrorState(error: .server)
                 } else {

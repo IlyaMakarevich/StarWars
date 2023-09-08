@@ -28,7 +28,7 @@ class StarshipCell: TableViewCell {
     private let modelLabel = UILabel().with {
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        $0.numberOfLines = 1
+        $0.numberOfLines = 0
     }
     
     private let producerLabel = UILabel().with {
@@ -79,10 +79,8 @@ class StarshipCell: TableViewCell {
         let labelsStack = UIStackView()
         labelsStack.spacing = 10
         labelsStack.axis = .vertical
-        labelsStack.distribution = .fillProportionally
+        labelsStack.distribution = .equalCentering
         labelsStack.addArrangedSubviews([nameLabel, modelLabel, producerLabel, passengersLabel])
-        
-        producerLabel.snp.contentCompressionResistanceVerticalPriority = .greatestFiniteMagnitude
 
         contentView.addSubview(labelsStack)
         labelsStack.snp.makeConstraints {

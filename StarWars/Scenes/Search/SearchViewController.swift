@@ -62,6 +62,10 @@ class SearchViewController: UIViewController, SearchView {
         $0.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         $0.textColor = .black.withAlphaComponent(0.5)
     }
+    
+    private let activityIndicator = UIActivityIndicatorView().with {
+        $0.hidesWhenStopped = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +106,13 @@ class SearchViewController: UIViewController, SearchView {
         view.addSubview(noResultsLabel)
         noResultsLabel.snp.makeConstraints {
             $0.top.equalTo(searchBar.snp.bottom).offset(100)
+            $0.centerX.equalToSuperview()
+        }
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom).offset(200)
+            $0.size.equalTo(80)
             $0.centerX.equalToSuperview()
         }
         
@@ -209,6 +220,14 @@ class SearchViewController: UIViewController, SearchView {
     
     func resetTable() {
         tableViewManager.sections = []
+    }
+    
+    func showActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
 }
 
