@@ -25,7 +25,6 @@ protocol SearchView: AnyObject {
 
 protocol SearchPresenter {
     var searchedItems: SearchScreenItems { get }
-    func viewDidLoad()
     func search(text: String)
     func resetResults()
     
@@ -58,9 +57,6 @@ final class SearchPresenterImpl: SearchPresenter {
         self.persistanceUseCase = persistanceUseCase
         self.favoriteCheckerUseCase = favoriteCheckerUseCase
         self.router = router
-    }
-    
-    func viewDidLoad() {
     }
     
     func search(text: String) {
