@@ -25,7 +25,6 @@
 		A45D03AD2AA7B3A600EC7015 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03AC2AA7B3A600EC7015 /* SearchPresenter.swift */; };
 		A45D03AF2AA7B3B200EC7015 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03AE2AA7B3B200EC7015 /* SearchRouter.swift */; };
 		A45D03B22AA7BB6700EC7015 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03B12AA7BB6700EC7015 /* Character.swift */; };
-		A45D03B42AA7BC1D00EC7015 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03B32AA7BC1D00EC7015 /* Film.swift */; };
 		A45D03B62AA7BC3C00EC7015 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03B52AA7BC3C00EC7015 /* Planet.swift */; };
 		A45D03B82AA7BC5800EC7015 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03B72AA7BC5800EC7015 /* Starship.swift */; };
 		A45D03BB2AA7BCD600EC7015 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D03BA2AA7BCD600EC7015 /* APIService.swift */; };
@@ -90,7 +89,6 @@
 		A45D03AC2AA7B3A600EC7015 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		A45D03AE2AA7B3B200EC7015 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		A45D03B12AA7BB6700EC7015 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		A45D03B32AA7BC1D00EC7015 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		A45D03B52AA7BC3C00EC7015 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		A45D03B72AA7BC5800EC7015 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		A45D03BA2AA7BCD600EC7015 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				A45D03B12AA7BB6700EC7015 /* Character.swift */,
-				A45D03B32AA7BC1D00EC7015 /* Film.swift */,
 				A45D03B52AA7BC3C00EC7015 /* Planet.swift */,
 				A45D03B72AA7BC5800EC7015 /* Starship.swift */,
 			);
@@ -474,7 +471,6 @@
 				A45D037C2AA77A0C00EC7015 /* AppDelegate.swift in Sources */,
 				A45D03B22AA7BB6700EC7015 /* Character.swift in Sources */,
 				A45D03FE2AA9A5A600EC7015 /* CharacterEntity+CoreDataClass.swift in Sources */,
-				A45D03B42AA7BC1D00EC7015 /* Film.swift in Sources */,
 				A45D03BD2AA7C2CC00EC7015 /* ReachabilityService.swift in Sources */,
 				A4F01C5A2AAA08F9008F81F2 /* FavoriteCheckerUseCase.swift in Sources */,
 				A45D03DA2AA8A2A300EC7015 /* PlanetCell.swift in Sources */,
