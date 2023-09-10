@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct InfoCharacters: Codable {
+struct InfoCharacters: Decodable {
     let count: Int
     let next: String?
     let previous: String?
     let results: [Character]
 }
 
-struct Character: Codable, Equatable {
+struct Character: Decodable, Equatable {
     enum CodingKeys: String, CodingKey {
         case name
         case height
