@@ -13,7 +13,8 @@ protocol SearchConfigurator {
 
 final class SearchConfiguratorImpl: SearchConfigurator {
     func configure(searchViewController: SearchViewController) {
-        let searchUseCase = SearchUseCaseImp()
+        let apiService = APIService()
+        let searchUseCase = SearchUseCaseImp(apiService: apiService)
         let persistanceUseCase = PersistanceUseCaseImpl()
         let favoriteCheckerUseCase = FavoriteCheckerUseCaseImpl()
         let router = SearchViewRouterImpl(searchViewController: searchViewController)

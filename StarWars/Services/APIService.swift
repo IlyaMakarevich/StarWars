@@ -46,10 +46,7 @@ protocol APIServiceProtocol {
     func searchPlanet(by text: String) -> AnyPublisher<DataResponse<InfoPlanets, NetworkError>, Never>
 }
 
-public final class APIService {
-    static let shared: APIServiceProtocol = APIService()
-    private init() { }
-}
+final class APIService {}
 
 extension APIService: APIServiceProtocol {
     func searchCharacter(by text: String) -> AnyPublisher<DataResponse<InfoCharacters, NetworkError>, Never> {

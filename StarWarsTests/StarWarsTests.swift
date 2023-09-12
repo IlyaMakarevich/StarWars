@@ -21,19 +21,20 @@ final class StarWarsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testAPIService() throws {
+    func testSearch() throws {
         let expectation = self.expectation(description: "ApiCall")
         var error: Error?
         var resultName: String = ""
         
-        APIService.shared.searchCharacter(by: "Luke")
-            .sink { response in
-                error = response.error
-                resultName = response.value?.results.first?.name ?? ""
+        let apiService = APIService()
+        let searchUseCase = SearchUseCaseImp(apiService: apiService)
+        searchUseCase.search(by: "Luke")
+            .sink { items in
+                resultName = items.people?.results.first?.name ?? ""
                 expectation.fulfill()
             }
             .store(in: &cancellables)
-        
+
         waitForExpectations(timeout: 10)
         
         XCTAssertNil(error)

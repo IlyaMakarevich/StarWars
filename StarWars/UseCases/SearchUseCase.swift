@@ -26,10 +26,16 @@ protocol SearchUseCase {
 class SearchUseCaseImp: SearchUseCase {
     private var cancellables = Set<AnyCancellable>()
     
+    private let apiService: APIServiceProtocol
+    
+    init(apiService: APIServiceProtocol) {
+        self.apiService = apiService
+    }
+    
     func search(by text: String) -> AnyPublisher<SearchScreenItems, Never> {
-        let characterSearch = APIService.shared.searchCharacter(by: text)
-        let starshipSearch = APIService.shared.searchStarship(by: text)
-        let planetSearch = APIService.shared.searchPlanet(by: text)
+        let characterSearch = apiService.searchCharacter(by: text)
+        let starshipSearch = apiService.searchStarship(by: text)
+        let planetSearch = apiService.searchPlanet(by: text)
         
         return Publishers.Zip3(characterSearch, starshipSearch, planetSearch)
             .map { char, starship, planet in

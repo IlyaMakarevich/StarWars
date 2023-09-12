@@ -110,24 +110,4 @@ final class CoreDataManager: NSObject {
             return []
         }
     }
-    
-    func deleteAllRecords() {
-        let deleteFetchCharacter: NSFetchRequest<NSFetchRequestResult>? = CharacterEntity.fetchRequest()
-        let deleteFetchStarship: NSFetchRequest<NSFetchRequestResult>? = StarshipEntity.fetchRequest()
-        let deleteFetchPlanet: NSFetchRequest<NSFetchRequestResult>? = PlanetEntity.fetchRequest()
-
-        let requestsToDelete = [deleteFetchCharacter, deleteFetchStarship, deleteFetchPlanet]
-        requestsToDelete.forEach {
-            guard let request = $0 else { return }
-            let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
-            
-            do {
-                try context.execute(deleteRequest)
-                appDelegate.saveContext()
-            } catch {
-                print ("Error while deleting")
-            }
-        }
-
-    }
 }
